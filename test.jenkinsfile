@@ -4,10 +4,8 @@ pipeline {
         stage('Setup Maven') {
             steps {
                 sh '''
-                    if [ ! -d maven]; then
-                        curl -s https://dlcdn.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz | tar xz
-                        ./apache-maven-3.9.9/bin/mvn clean install
-                    fi
+                    curl -s https://dlcdn.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz | tar xz
+                    ./apache-maven-3.9.9/bin/mvn clean install
                 '''
             }
         }
