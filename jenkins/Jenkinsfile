@@ -21,14 +21,9 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
-        stage('SCM polling test') {
-            steps {
-                echo 'It should be picked up by polling!'
-            }
-        }
         stage('Completed') {
             steps {
-                echo 'This is completed!'
+                echo 'This is completed without polling step!'
             }
         }
     }
