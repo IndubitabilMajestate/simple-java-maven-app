@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Setup Maven') {
             steps {
-                sh ```
+                sh '''
                     if [ ! -d maven]; then
                         curl -s https://dlcdn.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz | tar xz
                         mv apache-maven-3.9.12 maven
                     fi
-                ```
+                '''
             }
         }
         stage('Build') {
